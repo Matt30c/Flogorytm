@@ -4,9 +4,9 @@
         <attribute name="name" value="calculatrice"/>
         <attribute name="authors" value="matteo-csl"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-10-16 11:20:56 AM"/>
+        <attribute name="saved" value="2025-10-30 10:16:12 AM"/>
         <attribute name="created" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0xNjswODoyODo0OCBBTTszMzUy"/>
-        <attribute name="edited" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0xNjsxMToyMDo1NiBBTTsxOzM0NDU="/>
+        <attribute name="edited" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0zMDsxMDoxNjoxMiBBTTsyOzM0Mzg="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -65,7 +65,7 @@
                     </then>
                     <else/>
                 </if>
-                <output expression="&quot;la reponse est: &quot;" newline="False"/>
+                <output expression="&quot;le resultat est : &quot;" newline="False"/>
                 <output expression="op" newline="True"/>
                 <output expression="&quot;veut tu faire une autre operation? &quot;" newline="True"/>
                 <declare name="rep" type="String" array="False" size=""/>
@@ -102,24 +102,44 @@
             <parameter name="n1" type="Real" array="False"/>
         </parameters>
         <body>
-            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;choisi le numero de la racine&quot;" newline="True"/>
+            <declare name="nRacine" type="Integer" array="False" size=""/>
+            <input variable="nRacine"/>
+            <declare name="i" type="Real" array="False" size=""/>
             <assign variable="i" expression="0"/>
-            <declare name="resultat" type="Integer" array="False" size=""/>
+            <declare name="resultat" type="Real" array="False" size=""/>
             <assign variable="resultat" expression="0"/>
-            <while expression="i&lt;= n1 &amp;&amp; resultat == 0">
-                <assign variable="i" expression="i + 1"/>
-                <if expression="i*i = n1">
-                    <then>
-                        <assign variable="resultat" expression="i"/>
-                    </then>
-                    <else>
-                        <assign variable="resultat" expression="0"/>
-                    </else>
-                </if>
-            </while>
+            <declare name="formuleRacine" type="Real" array="False" size=""/>
+            <if expression="nRacine == 2">
+                <then>
+                    <while expression="i&lt;= n1 &amp;&amp; resultat == 0">
+                        <assign variable="i" expression="i + 1"/>
+                        <if expression="i*i = n1">
+                            <then>
+                                <assign variable="resultat" expression="i"/>
+                            </then>
+                            <else>
+                                <assign variable="resultat" expression="0"/>
+                            </else>
+                        </if>
+                    </while>
+                </then>
+                <else>
+                    <assign variable="formuleRacine" expression="(n1)^(1/nRacine)"/>
+                    <assign variable="resultat" expression="formuleRacine"/>
+                    <if expression="resultat*resultat == n1">
+                        <then>
+                            <assign variable="resultat" expression="formuleRacine"/>
+                        </then>
+                        <else>
+                            <assign variable="resultat" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
             <if expression="resultat = 0">
                 <then>
-                    <output expression="&quot;aucun nombre entier peut etre le resultat donc resultat = 0&quot;" newline="True"/>
+                    <output expression="&quot;aucun nombre entier peut &#234;tre le resultat donc resultat = 0&quot;" newline="True"/>
                 </then>
                 <else/>
             </if>
