@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="calculatrice"/>
+        <attribute name="authors" value="matteo-csl"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-16 11:20:56 AM"/>
+        <attribute name="created" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0xNjswODoyODo0OCBBTTszMzUy"/>
+        <attribute name="edited" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0xNjsxMToyMDo1NiBBTTsxOzM0NDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="boucle" type="Boolean" array="False" size=""/>
+            <assign variable="boucle" expression="true"/>
+            <while expression="boucle = true">
+                <output expression="&quot;quel operation veux tu faire ?(/,+,*,-,p = puissance,r = racines)&quot;" newline="True"/>
+                <declare name="operation" type="String" array="False" size=""/>
+                <input variable="operation"/>
+                <declare name="n1" type="Integer" array="False" size=""/>
+                <declare name="n2" type="Integer" array="False" size=""/>
+                <declare name="op" type="Integer" array="False" size=""/>
+                <if expression="operation = &quot;p&quot;">
+                    <then>
+                        <output expression="&quot;choisi un numero&quot;" newline="True"/>
+                        <input variable="n1"/>
+                        <assign variable="op" expression="puissance(n1)"/>
+                    </then>
+                    <else>
+                        <if expression="operation = &quot;r&quot;">
+                            <then>
+                                <output expression="&quot;choisi un numero&quot;" newline="True"/>
+                                <input variable="n1"/>
+                                <assign variable="op" expression="racine(n1)"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;choisi deux numero&quot;" newline="True"/>
+                                <input variable="n1"/>
+                                <input variable="n2"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <if expression="operation = &quot;/&quot;">
+                    <then>
+                        <assign variable="op" expression="n1 / n2"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="operation = &quot;+&quot;">
+                    <then>
+                        <assign variable="op" expression="n1 + n2"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="operation = &quot;-&quot;">
+                    <then>
+                        <assign variable="op" expression="n1 - n2"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="operation = &quot;*&quot;">
+                    <then>
+                        <assign variable="op" expression="n1 * n2"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;la reponse est: &quot;" newline="False"/>
+                <output expression="op" newline="True"/>
+                <output expression="&quot;veut tu faire une autre operation? &quot;" newline="True"/>
+                <declare name="rep" type="String" array="False" size=""/>
+                <input variable="rep"/>
+                <if expression="rep = &quot;oui&quot;">
+                    <then/>
+                    <else>
+                        <assign variable="boucle" expression="false"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;programme fini&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="puissance" type="Integer" variable="resultat">
+        <parameters>
+            <parameter name="n1" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;choisi la puissance que tu veux faire&quot;" newline="True"/>
+            <declare name="np" type="Integer" array="False" size=""/>
+            <input variable="np"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <declare name="resultat" type="Integer" array="False" size=""/>
+            <assign variable="resultat" expression="n1"/>
+            <for variable="i" start="2" end="np" direction="inc" step="1">
+                <assign variable="resultat" expression="resultat * n1"/>
+            </for>
+        </body>
+    </function>
+    <function name="racine" type="Integer" variable="resultat">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <declare name="resultat" type="Integer" array="False" size=""/>
+            <assign variable="resultat" expression="0"/>
+            <while expression="i&lt;= n1 &amp;&amp; resultat == 0">
+                <assign variable="i" expression="i + 1"/>
+                <if expression="i*i = n1">
+                    <then>
+                        <assign variable="resultat" expression="i"/>
+                    </then>
+                    <else>
+                        <assign variable="resultat" expression="0"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="resultat = 0">
+                <then>
+                    <output expression="&quot;aucun nombre entier peut etre le resultat donc resultat = 0&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

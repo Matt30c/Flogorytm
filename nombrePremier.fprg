@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="nombrePremier"/>
+        <attribute name="authors" value="matteo-csl"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-09 10:37:55 AM"/>
+        <attribute name="created" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0wOTswOToyMDowMSBBTTszMzM2"/>
+        <attribute name="edited" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0wOTsxMDozNzo1NSBBTTsxOzM0NTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nombre" type="Integer" array="False" size=""/>
+            <input variable="nombre"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="nombre" direction="inc" step="1">
+                <declare name="nbtot" type="Integer" array="False" size=""/>
+                <assign variable="nbtot" expression="0"/>
+                <declare name="boucle" type="Integer" array="False" size=""/>
+                <assign variable="boucle" expression="0"/>
+                <for variable="boucle" start="1" end="i" direction="inc" step="1">
+                    <if expression="i%boucle = 0">
+                        <then>
+                            <assign variable="nbtot" expression="nbtot +1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="nbtot = 2">
+                    <then>
+                        <output expression="i" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

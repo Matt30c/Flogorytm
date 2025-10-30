@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="recette"/>
+        <attribute name="authors" value="matteo-csl"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-09 09:19:58 AM"/>
+        <attribute name="created" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0wOTswODoyNDozMSBBTTszMzQy"/>
+        <attribute name="edited" value="bWF0dGVvLWNzbDtERVNLVE9QLUw3VFEzUTA7MjAyNS0xMC0wOTswOToxOTo1OCBBTTsxOzM0NjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="String" array="False" size=""/>
+            <assign variable="a" expression="&quot;Aller acheter les ingr&#233;dients dont vous avez besoin pour les hots dogs&quot;"/>
+            <declare name="b" type="String" array="False" size=""/>
+            <assign variable="b" expression="&quot;Acheter les pains, les saucisses, le ketchup et la mayonnaise&quot;"/>
+            <declare name="c" type="String" array="False" size=""/>
+            <assign variable="c" expression="&quot;D&#232;s que vous avez fini d&#8217;acheter les ingr&#233;dients aller payer&quot;"/>
+            <declare name="d" type="String" array="False" size=""/>
+            <assign variable="d" expression="&quot;Retourner chez vous&quot;"/>
+            <declare name="e" type="String" array="False" size=""/>
+            <assign variable="e" expression="&quot;D&#232;s que vous &#234;tes arriv&#233; commencer la pr&#233;paration&quot;"/>
+            <declare name="f" type="String" array="False" size=""/>
+            <assign variable="f" expression="&quot;D&#233;but de la pr&#233;paration&quot;"/>
+            <declare name="g" type="String" array="False" size=""/>
+            <assign variable="g" expression="&quot;Mettre de l&#8217;eau dans la casserole&quot;"/>
+            <declare name="h" type="String" array="False" size=""/>
+            <assign variable="h" expression="&quot;Poser la casserole sur la plaque de cuisson&quot;"/>
+            <declare name="i" type="String" array="False" size=""/>
+            <assign variable="i" expression="&quot;l&#8217;eau est bouillante&quot;"/>
+            <declare name="j" type="String" array="False" size=""/>
+            <assign variable="j" expression="&quot;faire bouillr l eau&quot;"/>
+            <declare name="k" type="String" array="False" size=""/>
+            <assign variable="k" expression="&quot;mettre la saucisse dans l'eau&quot;"/>
+            <declare name="l" type="String" array="False" size=""/>
+            <declare name="min" type="Integer" array="False" size=""/>
+            <assign variable="min" expression="0"/>
+            <output expression="a" newline="True"/>
+            <output expression="b" newline="True"/>
+            <output expression="c" newline="True"/>
+            <output expression="d" newline="True"/>
+            <output expression="e" newline="True"/>
+            <output expression="f" newline="True"/>
+            <output expression="g" newline="True"/>
+            <output expression="h" newline="True"/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <assign variable="temp" expression="37"/>
+            <declare name="x" type="String" array="False" size=""/>
+            <while expression="temp &lt; 100">
+                <assign variable="temp" expression="temp +1"/>
+                <output expression="temp" newline="True"/>
+            </while>
+            <if expression="temp &gt; 99">
+                <then>
+                    <output expression="i" newline="True"/>
+                    <output expression="k" newline="True"/>
+                    <assign variable="min" expression="0"/>
+                    <for variable="min" start="1" end="4" direction="inc" step="1">
+                        <output expression="min" newline="True"/>
+                    </for>
+                    <assign variable="x" expression="&quot;sortir la saucisse de leau&quot;"/>
+                    <output expression="x" newline="True"/>
+                </then>
+                <else>
+                    <output expression="i" newline="True"/>
+                </else>
+            </if>
+            <assign variable="x" expression="&quot;Mettre la saucisse dans le pain&quot;"/>
+            <output expression="x" newline="True"/>
+            <assign variable="x" expression="&quot;manger&quot;"/>
+            <output expression="x" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
